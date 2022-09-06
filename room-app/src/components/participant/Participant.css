@@ -1,0 +1,31 @@
+li {
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+}
+
+svg {
+    margin-right: 12px;
+}
+
+.participant-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status-text {
+    font-style: italic;
+}
+
+.icon-button {
+    appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
