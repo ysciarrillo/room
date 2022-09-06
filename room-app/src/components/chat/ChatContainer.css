@@ -1,0 +1,44 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.send-container {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: calc(100% - 75px);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding: 14px;
+    resize: none;
+    border: 2px var(--text-primary) solid;
+}
+
+.send-button {
+    width: 75px;
+    cursor: pointer;
+    border-radius: 0;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #8443D8;
+}
+
+.send-button g {
+    fill: var(--text-primary);
+}
+
+.send-button path {
+    stroke: var(--text-primary);
+}

@@ -1,0 +1,51 @@
+li {
+    list-style: none;
+    display: flex;
+    margin-bottom: 12px;
+    width: 100%;
+    font-size: medium;
+}
+
+svg {
+    margin-right: 12px;
+}
+
+.participant-info {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edited-status {
+    background: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 8px 0 0 0;
+    border: none;
+    border-bottom: 1px solid;
+    appearance: none;
+    color: white;
+    outline: none;
+}
+
+.status-text {
+    width: 80%;
+    font-style: italic;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.icon-button {
+    appearance: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #FF6422;
+    font-size: large;
+}
