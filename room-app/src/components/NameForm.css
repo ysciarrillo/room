@@ -1,4 +1,4 @@
-form {
+.name-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,4 +7,8 @@ form {
     height: 50%;
     box-sizing: border-box;
     margin: 0 auto;
+}
+
+label {
+    margin-bottom: 8px;
 }

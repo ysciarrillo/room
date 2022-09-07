@@ -1,8 +1,7 @@
-import Avatar from 'avataaars';
-import { generateRandomAvatarOptions } from '../../avatar';
-import { useEffect, useState } from 'react';
-import './Participant.css';
-import { ReactComponent as EditIcon } from '../../assets/pencil-edit-icon.svg';
+import Avatar from "avataaars";
+import { generateRandomAvatarOptions } from "../../avatar";
+import { useEffect, useState } from "react";
+import "./Participant.css";
 
 function Participant(props) {
     const [avatarOptions, setAvatarOptions] = useState();
@@ -18,7 +17,7 @@ function Participant(props) {
     }, [props]);
 
     const handleNewStatus = () => {
-        if (isEditingStatus) {
+        if (isEditingStatus && newStatus !== props.participant.status) {
             setNewStatus(newStatus);
             props.updateStatus(newStatus);
         }
@@ -29,20 +28,23 @@ function Participant(props) {
     return (
         <li key={props.participant.id}>
             <Avatar
-                avatarStyle='Circle'
+                avatarStyle="Square"
                 {...avatarOptions}
-                style={{ width: '50px', height: '50px' }}
+                style={{ width: "50px", height: "50px" }}
             />
-            <div className='participant-info'>
-                <span>{props.participant.name} {props.isMe && '(You)'}</span>
-                <div className='status'>
+            <div className="participant-info">
+                <span>{props.participant.name} {props.isMe && "(You)"}</span>
+                <div className="status">
                     {isEditingStatus && props.isMe
-                        ? <input value={newStatus} onChange={(e) => setNewStatus(e.target.value)} />
-                        : <span className='status-text'>Status: {props.participant.status}</span>
+                        ? <input className="edited-status" value={newStatus} onChange={(e) => setNewStatus(e.target.value)} />
+                        : <span className="status-text">{props.participant.status.length === 0 ? "No status yet..." : props.participant.status}</span>
                     }
                     {props.isMe &&
-                        <button className='icon-button' onClick={handleNewStatus}>
-                            {isEditingStatus ? 'save' : 'edit'}
+                        <button className="icon-button" onClick={handleNewStatus}>
+                            {isEditingStatus
+                                ? <span>&#10004;</span>
+                                : <span>&#9998;</span>
+                            }
                         </button>
                     }
                 </div>

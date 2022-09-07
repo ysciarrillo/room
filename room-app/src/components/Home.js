@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
-import './Home.css';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+import "./Home.css";
 
 function Home() {
     const navigate = useNavigate();
@@ -9,8 +9,7 @@ function Home() {
     const [showError, setShowError] = useState(false);
 
     const handleCreateRoom = () => {
-        let newRoomId = uuidv4();
-        console.log("create clicked", newRoomId);
+        const newRoomId = uuidv4();
         navigate(`/room/${newRoomId}`);
     }
 
@@ -21,18 +20,17 @@ function Home() {
         }
 
         setShowError(false);
-        console.log("join clicked", roomId);
         navigate(`/room/${roomId}`);
     }
 
     return (
-        <div className='btn-container'>
-            <button className='button-cta' onClick={handleCreateRoom}>Create room</button>
+        <div className="btn-container">
+            <button className="button-cta" onClick={handleCreateRoom}>Create room</button>
             <span>OR</span>
-            <span>Enter room ID below</span>
-            <input type="text" value={roomId} onChange={(e) => setRoomId(e.target.value)} />
-            {showError && <span className='error'>Room ID is required!</span>}
-            <button className='button-cta' onClick={handleJoinRoom}>Join room</button>
+            <label htmlFor="room">Enter room ID below</label>
+            <input id="room" type="text" value={roomId} onChange={(e) => setRoomId(e.target.value)} />
+            {showError && <span className="error">Room ID is required!</span>}
+            <button className="button-cta" onClick={handleJoinRoom}>Join room</button>
         </div>
     );
 }

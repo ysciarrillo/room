@@ -1,9 +1,9 @@
-import './ParticipantList.css';
-import Participant from './Participant';
+import "./ParticipantList.css";
+import Participant from "./Participant";
 
 function ParticipantList(props) {
     return (
-        <div className='participant-list'>
+        <div className="participant-list">
             <ul>
                 <Participant key={props.me.id} participant={props.me} isMe={true} updateStatus={props.updateStatus} />
 

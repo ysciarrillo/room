@@ -1,8 +1,8 @@
 import { useState } from "react";
-import './NameForm.css';
+import "./NameForm.css";
 
 function NameForm(props) {
-    const [name, setName] = useState('');
+    const [name, setName] = useState("");
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -14,10 +14,10 @@ function NameForm(props) {
     }
 
     return (
-        <form onSubmit={handleFormSubmit}>
-            <label htmlFor='name'>Enter your name to proceed</label>
-            <input id='name' value={name} onChange={handleNameChange} />
-            <button className='button-cta'>Continue</button>
+        <form className="name-form" onSubmit={handleFormSubmit}>
+            <label htmlFor="name">Enter your name to proceed</label>
+            <input id="name" value={name} onChange={handleNameChange} />
+            <button className="button-cta">Continue</button>
         </form>
     );
 }
